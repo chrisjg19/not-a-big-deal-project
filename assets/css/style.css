@@ -1,7 +1,33 @@
+* {
+    background-color: black;
+}
 .display {
+    color: white;
     text-align: center;
 }
 
 .hide {
     display: none;
+
   }
+
+#header {
+    text-align: center;
+    color: white;
+}
+
+.search-btn {
+    color: rgb(228, 66, 17);
+    background-color: white;
+}
+
+.search-field {
+    background-color: grey;
+}
+.movies {
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
