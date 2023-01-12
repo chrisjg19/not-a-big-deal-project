@@ -24,3 +24,10 @@
 .search-field {
     background-color: grey;
 }
+.movies {
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+}

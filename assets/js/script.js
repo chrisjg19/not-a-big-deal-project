@@ -9,3 +9,32 @@ function createWatchList() {
 }
 
 createBtn.onclick = createWatchList;
+var createBtn = document.querySelector("#create");
+var searchBtn = document.querySelector('.search-btn')
+var watchlistEl = document.querySelector("#watchlist")
+var searchField = document.querySelector('.search-field')
+var movies = document.querySelector('.movies')
+
+function createWatchList() {
+    var homeEl = document.getElementById("home");
+    homeEl.setAttribute("class", "hide");
+    watchlistEl.setAttribute("class", "display");
+}
+
+searchBtn.addEventListener('click', ()=> {
+    if (searchField.value) {
+        getData();
+        var liEl = document.createElement('li');
+        liEl.textContent = searchField.value;
+        var olEl = document.getElementById("movies");
+        olEl.appendChild(liEl);
+    } else {
+        return;
+    }
+})
+
+function getData() {
+    let text = searchField.value;
+}
+
+createBtn.onclick = createWatchList;
