@@ -12,22 +12,32 @@
 </head>
 <body>
     <div class ="splash">
-        <div id="header"><h1>ListFLIX</h1></div>
+        <div id="header">
+            <a class="logo" href="./index.html">
+                <h1>ListFlix</h1>
+            </a>
+        </div>
 
         <div id="home" class="display">
             
         <div id="description">This is not a torrent but rather a way to create a rearrangable list of your next 5 movies <br> you and your friends can watch together</div>
         <br>
             
-            <button id="create" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Create Watch List</button>
+            <button id="create" class="mdl-button mdl-js-button mdl-radio__buton mdl-button--raised mdl-button--colored">Create Watch List</button>
         </div>
         
 
         <br>
         <div id="watchlist" class="hide">
-            <input class="search-field" type="text" id="city">
-            <button class="search-btn" type="button">Search</button>
-            <ul id="movies"></ul>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield">
+                <input class="search-field mdl-textfield__input" type="text" id="city">
+                <label class="mdl-textfield__label" for="sample1">MOVIE</label>
+            </div>   
+                <button class="search-btn mdl-radio__buton" type="button">Search</button>
+            <div class="mdl-cell mdl-cell--1-col">
+                <ul id="movies"></ul>                
+            </div>
+
         </div>
 
         <div id="info" class="hide">
