@@ -53,7 +53,8 @@ fetch("https://www.omdbapi.com/?apikey=" + omdbKey + "&t=" + text)
 
 createBtn.onclick = createWatchList;
 
-$(function () {
+$(function (){
     $('#movies').sortable({
       placeholder: 'ui-state-highlight',
-    });
+    })
+});
