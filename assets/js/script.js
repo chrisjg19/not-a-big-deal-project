@@ -56,5 +56,4 @@ createBtn.onclick = createWatchList;
 $(function (){
     $('#movies').sortable({
       placeholder: 'ui-state-highlight',
-    })
-});
+

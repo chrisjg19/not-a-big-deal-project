@@ -47,10 +47,4 @@ label[for=search]{
     padding-left: 20px;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
-    color: aliceblue;
-    text-align: start;
-}
-
-.movielist {
-    background-color: orange;
 }
