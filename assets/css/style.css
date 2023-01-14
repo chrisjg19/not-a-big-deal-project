@@ -21,6 +21,7 @@
     color: white;
 }
 
+
 .search-btn {
     color: rgb(228, 66, 17);
     background-color: white;
@@ -28,6 +29,11 @@
 
 .search-field {
     background-color: grey;
+}
+
+label[for=search]{
+    color: white;
+    opacity: 30%;
 }
 .movies {
     flex-direction: column;
