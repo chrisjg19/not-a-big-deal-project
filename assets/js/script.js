@@ -57,4 +57,4 @@ $(function () {
     $('#movies').sortable({
       placeholder: 'ui-state-highlight',
     });
-  })
+  });
