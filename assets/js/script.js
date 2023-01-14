@@ -35,6 +35,20 @@ searchBtn.addEventListener('click', ()=> {
 
 function getData() {
     let text = searchField.value;
+    var omdbKey = "40e6cec5"
+
+fetch("https://www.omdbapi.com/?apikey=" + omdbKey + "&t=" + text)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+    console.log(data.Actors);
+  })
+  .catch(function(error) {
+    console.error(error)
+  })
+
 }
 
 createBtn.onclick = createWatchList;
@@ -43,4 +57,3 @@ $(function () {
     $('#movies').sortable({
       placeholder: 'ui-state-highlight',
     });
-  });
