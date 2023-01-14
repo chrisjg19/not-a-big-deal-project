@@ -33,5 +33,6 @@
 }
 footer {
     display: flex;
+    border: 1px;
 
 }
