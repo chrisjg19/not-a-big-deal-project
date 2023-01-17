@@ -51,6 +51,27 @@ fetch("https://www.omdbapi.com/?apikey=" + omdbKey + "&t=" + text)
 
 }
 
+
+//function getVideo() {
+  let text = searchField.value;
+  var moviedbKey = "9b301761cd1b73ddad01ebb533475ea8"
+  
+console.log(
+fetch("https://api.themoviedb.org/3/movie/tt1285016?api_key=9b301761cd1b73ddad01ebb533475ea8&language=en-US&page=1&region=US")
+  .then (function (response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+    console.log(data.key);
+  })
+  .catch(function(error) {
+    console.error(error)
+  }))
+//}
+
+console.log()
+
 createBtn.onclick = createWatchList;
 
 $(function (){
