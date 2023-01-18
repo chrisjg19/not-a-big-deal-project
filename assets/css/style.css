@@ -1,6 +1,7 @@
 * {
     background-color: rgb(26, 26, 26);
 }
+
 .display {
     color: white;
     text-align: center;
@@ -21,8 +22,12 @@
     color: white;
 }
 
-
 .search-btn {
+    color: rgb(228, 66, 17);
+    background-color: white;
+}
+
+.clear-btn {
     color: rgb(228, 66, 17);
     background-color: white;
 }
@@ -36,14 +41,16 @@ label[for=search]{
     opacity: 30%;
 }
 
+.mdl-list__item-primary-content {
+    justify-content: center;
+}
 
-
-#movies {
+#info-box {
+    color: white;
     min-width: 50%;
     min-height: 60px;
     flex-direction: column;
     justify-content: space-around;
-    padding-top: 20px;
     padding-left: 20px;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
