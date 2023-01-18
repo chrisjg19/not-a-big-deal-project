@@ -134,9 +134,9 @@ clearBtn.onclick = clearList;
 //     }
 // })
 
-var moviedbKey = "9b301761cd1b73ddad01ebb533475ea8"
-fetch ("https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=" + moviedbKey + "&language=en-US")
-      .then(response => response.json())
-      .then(data => {
-    console.log(data);
-    console.log(data.results[0].key)
+// var moviedbKey = "9b301761cd1b73ddad01ebb533475ea8"
+// fetch ("https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=" + moviedbKey + "&language=en-US")
+//       .then(response => response.json())
+//       .then(data => {
+//     console.log(data);
+//     console.log(data.results[0].key)
