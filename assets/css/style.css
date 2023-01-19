@@ -41,7 +41,7 @@ body{
     margin: 5%;
     color: #F1F6F5;
     text-align: center;
-    text-transform: capitalize;
+    text-transform: lowercase;
 }
 .content {
     display: block;
