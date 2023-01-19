@@ -4,6 +4,7 @@ var createBtn = document.querySelector("#create");
 var clearBtn = document.querySelector("#clear");
 var watchlistEl = document.querySelector("#watchlist")
 var movieInfoEl = $('#movieinfo')
+var movieListEl = $('#movielist')
 
 function createWatchList() {
     var homeEl = document.getElementById("home");
@@ -43,6 +44,7 @@ function searchDBs(searchInput) {
   const plot = data.results[0].overview
 
   movieInfoEl.empty();
+  movieListEl = [];
 
   movieInfoEl.append($('<div>').addClass('row'), $('<div>').addClass('row justify-content-between'));
   movieInfoEl.children().eq(0).append($('<div>').addClass('container').attr('id', 'info-box'));
@@ -69,24 +71,31 @@ function searchDBs(searchInput) {
     $('#info-box').children().eq(3).append($('<p>').text(`IMDB Rating: ${imdbRating}`));
     $('#poster').append($('<img src=' + `${Poster}` + '>'));
 
-    if (movieInfoEl) {
-      movieInfoEl.push(movieTitle);
-      window.localStorage.setItem("movieinfo", JSON.stringify(movieInfoEl));
+    if (movieListEl) {
+      movieListEl.push(movieTitle);
+      window.localStorage.setItem("movieinfo", JSON.stringify(movieListEl));
       makeListItem(movieTitle);   
       }
     });
   });
 }
 
-var movielist = JSON.parse(window.localStorage.getItem("movielist")) || [];
+// var movielist = JSON.parse(window.localStorage.getItem("movielist")) || [];
+const movieList = [];
 
 function makeListItem (movieTitle) {
-    var listItem = $("<li>").text(movieTitle);
-    $("#movielist").append(listItem);
+    // var listItem = $("<li>").text(movieTitle);
+    // $("#movielist").append(listItem);
+    // movieListEl.push(listItem);
+    // console.log(movieListEl)
+
+    var listItem = movieTitle
+    movieList.push(movieTitle)
+    $("#movielist").append($('<li>').text(listItem));
 }
 
-$("#movielist").on("click", "p", function() {
-    searchOMDB($(this).text())
+$("<li>").click (function(searchDBs) {
+    $(this).text();
     console.log(this)
 })
 
@@ -97,8 +106,8 @@ $(function (){
 });
 
 function clearList() {
-    window.localStorage.removeItem("movielist");
-    window.location.reload();
+    // window.localStorage.removeItem("movieInfoEl");
+    // window.location.reload();
   }
 
 clearBtn.onclick = clearList;
