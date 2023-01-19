@@ -3,9 +3,9 @@
 ## User Story
 
 AS A Developer
-I want to host a website that will help people list the movies they wish to watch.
+I want to host a website that will help people find the minimal information about the movie they wish to watch. Features title, posters, summery, actors, and rating.
 
-## Acceptance Criteria
+<!-- ## Acceptance Criteria
 
 Uses a CSS framework other than Bootstrap.
 Deployed to Github Pages.
@@ -15,7 +15,7 @@ Uses modals instead of alerts, confirms, or prompts.
 Uses client-side storage to store persistent data.
 Is responsive.
 Has a polished UI.
-Has a clean repository.
+Has a clean repository. -->
 
 GIVEN I need to movies to be listed
 WHEN I click on the search bar
