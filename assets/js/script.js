@@ -42,6 +42,7 @@ function searchOMDB(searchInput) {
       console.log(Title)
       console.log(Plot)
       console.log(imdbRating)
+      console.log(Poster)
       // let movieTitle = document.getElementById("movieTitle")
       //     movieTitle.innerHTML = `${Title}`
 
@@ -57,7 +58,7 @@ function searchOMDB(searchInput) {
         };
       
       const movie = '<h2>' + Title;
-      
+      $('#info-box').children().eq(0).append($('<h2>').text(`Poster`));
       $('#info-box').children().eq(0).append($('<h2>').text(`${Title}`));
       $('#info-box').children().eq(1).append($('<p>').text(`${Plot}`));
       $('#info-box').children().eq(2).append($('<p>').text(`Rating: ${imdbRating}`));
