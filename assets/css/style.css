@@ -45,7 +45,6 @@ label[for=search]{
     justify-content: center;
 }
 
-
 #info-box {
     color: white;
     min-width: 50%;
@@ -55,10 +54,15 @@ label[for=search]{
     padding-left: 20px;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
-    color: #fff;
-    text-align: start;
 }
 
 li {
     color: red;
+}
+
+#movielist li {
+    justify-content: left;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    text-align: left;
 }
