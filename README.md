@@ -17,7 +17,6 @@ Is responsive.
 Has a polished UI.
 Has a clean repository.
 
-(copy pasted from an old one)
 GIVEN I need to movies to be listed
 WHEN I click on the search bar
 THEN I am presented with a blank field to enter the names their posters
