@@ -2,7 +2,7 @@ const omdbKey = "40e6cec5"
 var createBtn = document.querySelector("#create");
 var clearBtn = document.querySelector("#clear");
 var watchlistEl = document.querySelector("#watchlist")
-var movieListEl = $('#movies')
+var movieInfoEl = $('#movieinfo')
 
 function createWatchList() {
     var homeEl = document.getElementById("home");
@@ -38,9 +38,9 @@ function searchOMDB(searchInput) {
         console.log(apiResponse);
 
     
-    if (movies) {
-        movies.push(searchInput);
-        window.localStorage.setItem("movies", JSON.stringify(movies));
+    if (movieInfoEl) {
+        movieInfoEl.push(searchInput);
+        window.localStorage.setItem("movieinfo", JSON.stringify(movieInfoEl));
         makeListItem(searchInput);   
     }
 
@@ -49,50 +49,51 @@ function searchOMDB(searchInput) {
     var imdbRating = apiResponse.imdbRating;
     var poster = apiResponse.Poster;
 
-    movieListEl.empty();
+    movieInfoEl.empty();
 
-    movieListEl.append($('<div>').addClass('row'), $('<div>').addClass('row'), $('<div>').addClass('row justify-content-between'));
-    movieListEl.children().eq(0).append($('<div>').addClass('container').attr('id', 'info-box'));
+    movieInfoEl.append($('<div>').addClass('row'), $('<div>').addClass('row justify-content-between'));
+    movieInfoEl.children().eq(0).append($('<div>').addClass('container').attr('id', 'info-box'));
     for (let i = 0; i < 4; i++) {
         $('#info-box').append($('<div>').addClass('row align-items-center'));
     };
 
-    const movieInfo = '<h2>' + movieTitle;
-    $('#info-box').children().eq(0).append(movieInfo);
+    const movie = '<h2>' + movieTitle;
+    $('#info-box').children().eq(0).append(movie);
     $('#info-box').children().eq(1).append($('<p>').text(`${plot}`));
     $('#info-box').children().eq(2).append($('<p>').text(`Rating: ${imdbRating}`));
    
 
     console.log(movieTitle, plot, imdbRating)
-    console.log(movies)
+    console.log(movielist)
     })
 }
 
 
 
-var movies = JSON.parse(window.localStorage.getItem("movies")) || [];
+var movielist = JSON.parse(window.localStorage.getItem("movielist")) || [];
 
 function makeListItem (movieTitle) {
     var listItem = $("<li>").text(movieTitle);
-    $("#movies").append(listItem);
+    $("#movielist").append(listItem);
 }
 
-$("#movies").on("click", "li", function() {
+$("#movielist").on("click", "li", function() {
     searchOMDB($(this).text())
+    console.log(this)
 })
 
-for (var i=0; i<5; i++) {
-    makeListItem(movies[i]);
-}
+// for (var i=0; i<5; i++) {
+//     makeListItem(movielist[i]);
+// }
 
 $(function (){
-  $('#movies').sortable({
+  $('#movielist').sortable({
     placeholder: 'ui-state-highlight',
   });
 });
 
 function clearList() {
-    window.localStorage.removeItem("movies");
+    window.localStorage.removeItem("movielist");
     window.location.reload();
   }
 
@@ -103,7 +104,7 @@ clearBtn.onclick = clearList;
 
 // var searchBtn = document.querySelector('.search-btn')
 // var searchField = document.querySelector('#search')
-// var movies = document.querySelector('.movies')
+// var movielist = document.querySelector('.movielist')
 // const omdbKey = "40e6cec5"
 // const searchInput = $('#search')
 
@@ -124,7 +125,7 @@ clearBtn.onclick = clearList;
 //         getData();
 //         var liEl = document.createElement('li');
 //         liEl.textContent = searchField.value;
-//         var olEl = document.getElementById("movies");
+//         var olEl = document.getElementById("movielist");
 //         olEl.appendChild(liEl);
 //     } else {
 //         return;
