@@ -78,3 +78,7 @@ li {
 #movieImage {
   text-align: center;
 }
+
+#poster {
+    justify-content: right;
+}
