@@ -56,6 +56,7 @@ function searchDBs(searchInput) {
   $.ajax({
         url: "https://www.omdbapi.com/?apikey=" + omdbKey + "&t=" + searchInput,
         method: "GET"
+
   }).then(({Actors, Poster, imdbRating}) => {
     console.log(Actors)
     console.log(Poster)

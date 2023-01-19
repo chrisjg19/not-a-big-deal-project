@@ -1,6 +1,9 @@
-* {
-    background-color: rgb(26, 26, 26);
+
+body{
+    margin:0;
+    background-color: #78909C;
 }
+
 .display {
     color: white;
     text-align: center;
@@ -13,18 +16,59 @@
 
 .hide {
     display: none;
+}
 
-  }
+.header {
+    padding-top: 30px;
+    overflow: hidden;
+    background-color: #472183;
+}
 
-#header {
+.header a {
+    float: center;
+    display: block;
+    color: #f2f2f2;
     text-align: center;
-    color: white;
+    text-decoration: none;
+}
+
+.header a h1:hover {
+    color: #251749;
+}
+
+.description {
+    display: grid;
+    margin: 5%;
+    color: #F1F6F5;
+    text-align: center;
+    text-transform: capitalize;
+}
+.content {
+    display: block;
+    background-color: #ddd;
+    padding: 10px;
+    height: 100%;
+}
+
+#home{
+    padding: 50px;
 }
 
 
 .search-btn {
-    color: rgb(228, 66, 17);
+    margin-left: 5px;
+    color: #7F167F;
     background-color: white;
+    border-radius: 5px;
+    border-color: #ffffff;
+}
+
+#search-form{
+    margin-top: 50px;
+}
+
+.mdl-textfield{
+    color: #000;
 }
 
 .clear-btn {
@@ -32,12 +76,8 @@
     background-color: white;
 }
 
-.search-field {
-    background-color: grey;
-}
-
 label[for=search]{
-    color: white;
+    color: rgb(0, 0, 0);
     opacity: 30%;
 }
 
@@ -45,7 +85,20 @@ label[for=search]{
     justify-content: center;
 }
 
+.aside{
+    position:relative;
+    justify-content: left;
+    margin: 20px;
+    padding: 20px;
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
+    text-transform: capitalize;
+    min-width: 30%;
+    height: 100%;
+}
+
 #info-box {
+    display: flex;
     color: white;
     min-width: 50%;
     min-height: 60px;
@@ -58,21 +111,22 @@ label[for=search]{
 }
 
 li {
-    color: red;
+    margin: 3px;
+    padding: 10px;
+    color: #251749;
+    border: 1px solid #251749;
 }
 
-#movielist li {
-    padding: 15px;
-    justify-content: left;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 10px;
-    text-align: left;
-}
 
-#movieTitle {
-    font-size: 55px;
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+    color: white;
     text-align: center;
-    color: purple;
 }
 
 #movieImage {
@@ -82,3 +136,13 @@ li {
 #poster {
     justify-content: right;
 }
+.footer h5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:1px, 1px, 1px, 1px;
+}
+
+.fa-github {
+    font-size: 24px;
+    color: #ddd;
