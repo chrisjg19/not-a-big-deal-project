@@ -1,6 +1,3 @@
-* {
-    background-color: rgb(26, 26, 26);
-}
 .display {
     color: white;
     text-align: center;
@@ -17,9 +14,38 @@
   }
 
 #header {
-    text-align: center;
-    color: white;
+    padding-top: 30px;
+    overflow: hidden;
+    background-color: #472183;
 }
+
+#header a {
+    float: center;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.header a h1:hover {
+    color: #251749;
+}
+
+.description {
+    display: grid;
+    margin: 5%;
+    color: #F1F6F5;
+    text-align: center;
+}
+
+.create-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
 
 
 .search-btn {
@@ -32,12 +58,17 @@
     background-color: white;
 }
 
-.search-field {
-    background-color: grey;
+.mdl-textfield {
+    color: #000;
+}
+
+#search-form {
+    padding: 100px;
+    background-color: #ddd;
 }
 
 label[for=search]{
-    color: white;
+    color: rgb(0, 0, 0);
     opacity: 30%;
 }
 
@@ -65,4 +96,27 @@ li {
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
     text-align: left;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+}
+
+.footer h5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:1px, 1px, 1px, 1px;
+}
+
+.fa-github {
+    font-size: 24px;
+    color: #ddd;
 }

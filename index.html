@@ -14,24 +14,20 @@
     <main class ="main">
         <div id="header">
             <a class="logo" href="./index.html">
-                <h1>ListFlix</h1>
+                <h1>LISTFLIX</h1>
             </a>
+            <div class="description">This is not a torrent but rather a way to create a rearrangable list of your next 5 movies <br> you and your friends can watch together</div>
         </div>
 
         <div id="home" class="display">
-            
-        <div id="description">This is not a torrent but rather a way to create a rearrangable list of your next 5 movies <br> you and your friends can watch together</div>
-        <br>
-            
-            <button id="create" class="mdl-button mdl-js-button mdl-radio__button mdl-button--raised mdl-button--colored">Create Watch List</button>
+            <div class="create-btn">
+             <button id="create" class="mdl-button mdl-js-button mdl-radio__button mdl-button--raised mdl-button--colored">Create Watch List</button>
+            </div>
         </div>
-        
-
-        <br>
         <div id="watchlist" class="hide">
             <form id="search-form">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield">
-                    <input class="mdl-textfield__input" type="text" id="search">
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input search-input" type="text" id="search">
                     <label class="mdl-textfield__label" for="search">MOVIE</label>
                 </div>   
                     <button class="search-btn mdl-radio__button" type="button">Search</button>
@@ -43,12 +39,17 @@
                         </span>
                     </div>
                 </div>
-
+                <button class="clear-btn mdl-radio__button" id="clear">Clear</button>  
             </form>
-            <button class="clear-btn mdl-radio__button" id="clear">Clear</button>    
-        
         </div>
+        <div class="footer">
+            <h5>CREATED BY</h5>
+            <div class="socials">
+                <i class="fa fa-github"></i>
+            </div>
+          </div>
     </main>
+    <div>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./assets/js/script.js"></script>
@@ -61,12 +62,6 @@
         src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
         integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
         crossorigin="anonymous"></script>
+    </div>
 </body>
-<footer>
-    <!-- <div id="recommendations">
-        <hr>
-        <img src="./assets/images/original-jaws-poster-image-1A (2).png" alt="original-jaws-poster-image-1A" width="200" height="200">
-        <img src="" alt="">
-         </div> -->
-</footer>
 </html>
