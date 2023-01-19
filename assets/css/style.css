@@ -129,6 +129,13 @@ li {
     text-align: center;
 }
 
+#movieImage {
+  text-align: center;
+}
+
+#poster {
+    justify-content: right;
+}
 .footer h5 {
     display: flex;
     align-items: center;
@@ -139,4 +146,3 @@ li {
 .fa-github {
     font-size: 24px;
     color: #ddd;
-}
