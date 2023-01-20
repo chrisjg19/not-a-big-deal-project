@@ -31,4 +31,5 @@ THEN I am presented with a movie's title, poster, summery, actors, and rating.
 
 
 Deployment Page: https://chrisjg19.github.io/not-a-big-deal-project/
+
 Repository URL: https://github.com/chrisjg19/not-a-big-deal-project
