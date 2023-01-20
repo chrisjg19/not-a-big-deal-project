@@ -30,7 +30,7 @@ $(".search-btn").on("click", function(event) {
     searchHistory(searchInput);
 });
 
-// const movieList = [];
+
 
 function searchDBs(searchInput) {
   $.ajax({
@@ -72,16 +72,10 @@ function searchDBs(searchInput) {
       localStorage.setItem("movie", JSON.stringify(movieListEl));
     }
 
-
     });
   });
 }
 
-// function clearList() {
-//   movieListEl.removeChild(movieListEl.firstChild);
-//   }
-
-// clearBtn.addEventListener("click", clearList);
 
 var searchHistory = function(searchInput) {
   $("#movielist").append($('<li>').text(searchInput));
@@ -93,6 +87,21 @@ var searchHistory = function(searchInput) {
   })
 }
 
+
+
+
+
+
+
+
+
+
+
+// function clearList() {
+//   movieListEl.removeChild(movieListEl.firstChild);
+//   }
+
+// clearBtn.addEventListener("click", clearList);
 
 // var historyClick = function
 
