@@ -99,7 +99,7 @@ label[for=search]{
 
 #info-box {
     display: flex;
-    color: white;
+    color: #3e3055;
     min-width: 50%;
     min-height: 60px;
     flex-direction: column;
