@@ -1,3 +1,4 @@
+//
 const omdbKey = "40e6cec5"
 const moviedbKey = "9b301761cd1b73ddad01ebb533475ea8"
 var createBtn = document.querySelector("#create");
@@ -7,6 +8,8 @@ var movieInfoEl = $('#movieinfo')
 var movieListEl = $('#movielist')
 var searchbuttons = document.querySelector(".searchbuttons")
 
+
+//intro screen hides, search displays
 function createWatchList() {
     var homeEl = document.getElementById("home");
     homeEl.setAttribute("class", "hide");
@@ -15,6 +18,8 @@ function createWatchList() {
 
 createBtn.onclick = createWatchList;
 
+
+//search via enter button
 $("#search-form").on("submit", function(event) {
     event.preventDefault();
     var searchInput = $("#search").val();
@@ -22,7 +27,7 @@ $("#search-form").on("submit", function(event) {
     searchHistory(searchInput);
 });
 
-
+//search via button
 $(".search-btn").on("click", function(event) {
     event.preventDefault();
     var searchInput = $("#search").val();
@@ -31,8 +36,9 @@ $(".search-btn").on("click", function(event) {
 });
 
 
-
+//search both databases
 function searchDBs(searchInput) {
+  //The Movie DB search
   $.ajax({
     url: "https://api.themoviedb.org/3/search/movie?api_key=" + moviedbKey + "&query=" + searchInput,
     method: "GET"
@@ -51,6 +57,7 @@ function searchDBs(searchInput) {
     $('#info-box').children().eq(0).append($('<h2>').text(`${movieTitle}`));
     $('#info-box').children().eq(1).append($('<p>').text(`${plot}`));
 
+  //OMDB search
   $.ajax({
       url: "https://www.omdbapi.com/?apikey=" + omdbKey + "&t=" + searchInput,
       method: "GET"
@@ -62,33 +69,35 @@ function searchDBs(searchInput) {
     $('#info-box').children().eq(3).append($('<p>').text(`IMDB Rating: ${imdbRating}`));
     $('#poster').append($('<img src=' + `${Poster}` + '>'));
 
-    var getStorage = localStorage.getItem("movie")
+  //local storage
+    var getStorage = localStorage.getItem("movielist")
     if (getStorage) {
-      movieListEl = JSON.parse(localStorage.getItem("movie"))
+      movieListEl = JSON.parse(localStorage.getItem("movielist"))
       movieListEl.push(movieTitle);
-      localStorage.setItem("movie", JSON.stringify(movieListEl));
+      localStorage.setItem("movielist", JSON.stringify(movieListEl));
     }else{
       movieListEl.push(movieTitle);
-      localStorage.setItem("movie", JSON.stringify(movieListEl));
+      localStorage.setItem("movielist", JSON.stringify(movieListEl));
     }
 
     });
   });
 }
 
-
+//create and retain search history list
 var searchHistory = function(searchInput) {
   $("#movielist").append($('<li>').text(searchInput));
   $('li').addClass("searchbuttons")
   
   var searchbuttons = document.querySelector(".searchbuttons")
   searchbuttons.addEventListener("click", function(click) {
-    searchDBs(click.target.textContent);
+    searchDBs(click.target);
   })
 }
 
 
 
+// DEAD CODE
 
 
 
