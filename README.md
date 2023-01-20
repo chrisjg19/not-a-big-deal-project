@@ -28,7 +28,11 @@ THEN I am presented with a movie's title, poster, summery, actors, and rating.
 ```
 ## Mock-Up
 
+![image](https://user-images.githubusercontent.com/73376530/213589879-17c9b69d-7d64-4041-8b55-9a33cc9142a9.png)
+![image](https://user-images.githubusercontent.com/73376530/213589928-f6fd7cda-4838-4089-9415-8ff56f2777c6.png)
+![image](https://user-images.githubusercontent.com/73376530/213590048-11056908-3fec-4d94-bed5-7b51c3d9b8f3.png)
 
 
 Deployment Page: https://chrisjg19.github.io/not-a-big-deal-project/
+
 Repository URL: https://github.com/chrisjg19/not-a-big-deal-project
