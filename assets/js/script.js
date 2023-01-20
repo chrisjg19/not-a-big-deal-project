@@ -17,18 +17,18 @@ createBtn.onclick = createWatchList;
 $("#search-form").on("submit", function(event) {
     event.preventDefault();
     var searchInput = $("#search").val();
-    
+
     console.log(searchInput);
-    
+
     searchDBs(searchInput);
 });
 
 $(".search-btn").on("click", function(event) {
     event.preventDefault();
     var searchInput = $("#search").val();
-    
+
     console.log(searchInput);
-    
+
     searchDBs(searchInput);
 });
 
@@ -51,7 +51,7 @@ function searchDBs(searchInput) {
   for (let i = 0; i < 2; i++) {
   $('#info-box').append($('<div>').addClass('row align-items-center'));
   };
-      
+
   $('#info-box').children().eq(0).append($('<h2>').text(`${movieTitle}`));
   $('#info-box').children().eq(1).append($('<p>').text(`${plot}`));
 
