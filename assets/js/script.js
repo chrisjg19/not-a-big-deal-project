@@ -5,6 +5,7 @@ var clearBtn = document.querySelector("#clear");
 var watchlistEl = document.querySelector("#watchlist")
 var movieInfoEl = $('#movieinfo')
 var movieListEl = $('#movielist')
+var searchbuttons = document.querySelector(".searchbuttons")
 
 function createWatchList() {
     var homeEl = document.getElementById("home");
@@ -17,53 +18,43 @@ createBtn.onclick = createWatchList;
 $("#search-form").on("submit", function(event) {
     event.preventDefault();
     var searchInput = $("#search").val();
-    
-    console.log(searchInput);
-    
     searchDBs(searchInput);
+    searchHistory(searchInput);
 });
+
 
 $(".search-btn").on("click", function(event) {
     event.preventDefault();
     var searchInput = $("#search").val();
-    
-    console.log(searchInput);
-    
     searchDBs(searchInput);
+    searchHistory(searchInput);
 });
+
+// const movieList = [];
 
 function searchDBs(searchInput) {
   $.ajax({
     url: "https://api.themoviedb.org/3/search/movie?api_key=" + moviedbKey + "&query=" + searchInput,
     method: "GET"
-}).then((data) => {
-  console.log(data)
-  console.log(data.results[0].title)
-  console.log(data.results[0].overview)
-  const movieTitle = data.results[0].title
-  const plot = data.results[0].overview
+  }).then((data) => {
+    const movieTitle = data.results[0].title
+    const plot = data.results[0].overview
 
-  movieInfoEl.empty();
-  movieListEl = [];
+    movieInfoEl.empty();
+    movieListEl = [];
 
-  movieInfoEl.append($('<div>').addClass('row'), $('<div>').addClass('row justify-content-between'));
-  movieInfoEl.children().eq(0).append($('<div>').addClass('container').attr('id', 'info-box'));
-  for (let i = 0; i < 2; i++) {
-  $('#info-box').append($('<div>').addClass('row align-items-center'));
-  };
-      
-  $('#info-box').children().eq(0).append($('<h2>').text(`${movieTitle}`));
-  $('#info-box').children().eq(1).append($('<p>').text(`${plot}`));
+    movieInfoEl.append($('<div>').addClass('row'), $('<div>').addClass('row justify-content-between'));
+    movieInfoEl.children().eq(0).append($('<div>').addClass('container').attr('id', 'info-box'));
+    for (let i = 0; i < 2; i++) {
+    $('#info-box').append($('<div>').addClass('row align-items-center'));
+    };    
+    $('#info-box').children().eq(0).append($('<h2>').text(`${movieTitle}`));
+    $('#info-box').children().eq(1).append($('<p>').text(`${plot}`));
 
   $.ajax({
-        url: "https://www.omdbapi.com/?apikey=" + omdbKey + "&t=" + searchInput,
-        method: "GET"
-
+      url: "https://www.omdbapi.com/?apikey=" + omdbKey + "&t=" + searchInput,
+      method: "GET"
   }).then(({Actors, Poster, imdbRating}) => {
-    console.log(Actors)
-    console.log(Poster)
-    console.log(imdbRating)
-
     for (let i = 2; i < 5; i++) {
     $('#info-box').append($('<div>').addClass('row align-items-center'));
     };
@@ -71,43 +62,59 @@ function searchDBs(searchInput) {
     $('#info-box').children().eq(3).append($('<p>').text(`IMDB Rating: ${imdbRating}`));
     $('#poster').append($('<img src=' + `${Poster}` + '>'));
 
-    if (movieListEl) {
+    var getStorage = localStorage.getItem("movie")
+    if (getStorage) {
+      movieListEl = JSON.parse(localStorage.getItem("movie"))
       movieListEl.push(movieTitle);
-      window.localStorage.setItem("movieinfo", JSON.stringify(movieListEl));
-      makeListItem(movieTitle);   
-      }
+      localStorage.setItem("movie", JSON.stringify(movieListEl));
+    }else{
+      movieListEl.push(movieTitle);
+      localStorage.setItem("movie", JSON.stringify(movieListEl));
+    }
+
+
     });
   });
 }
 
-// var movielist = JSON.parse(window.localStorage.getItem("movielist")) || [];
-const movieList = [];
+// function clearList() {
+//   movieListEl.removeChild(movieListEl.firstChild);
+//   }
 
-function makeListItem (movieTitle) {
-    // var listItem = $("<li>").text(movieTitle);
-    // $("#movielist").append(listItem);
-    // movieListEl.push(listItem);
-    // console.log(movieListEl)
+// clearBtn.addEventListener("click", clearList);
 
-    var listItem = movieTitle
-    movieList.push(movieTitle)
-    $("#movielist").append($('<li>').text(listItem));
+var searchHistory = function(searchInput) {
+  $("#movielist").append($('<li>').text(searchInput));
+  $('li').addClass("searchbuttons")
+  
+  var searchbuttons = document.querySelector(".searchbuttons")
+  searchbuttons.addEventListener("click", function(click) {
+    searchDBs(click.target.textContent);
+  })
 }
 
-$("<li>").click (function(searchDBs) {
-    $(this).text();
-    console.log(this)
-})
 
-$(function (){
-  $('#movielist').sortable({
-    // placeholder: 'ui-state-highlight',
-  });
-});
+// var historyClick = function
 
-function clearList() {
-    // window.localStorage.removeItem("movieInfoEl");
-    // window.location.reload();
-  }
+// if (movieListEl) {
+      // movieListEl.push(movieTitle);
+    //   // window.localStorage.setItem("movieinfo", JSON.stringify(movieListEl));
+    //   // makeListItem(movieTitle);   
+    //   }
 
-clearBtn.onclick = clearList;
+    // function makeListItem (movieTitle) {
+//     // var listItem = $("<li>").text(movieTitle);
+//     // $("#movielist").append(listItem);
+//     // movieListEl.push(listItem);
+//     // console.log(movieListEl)
+
+//     var listItem = movieTitle
+//     movieList.push(movieTitle)
+//     $("#movielist").append($('<li>').text(listItem));
+//     localStorage.setItem("movie", JSON.stringify(movieList))
+// }
+
+// $("#movielist").click (function(searchDBs) {
+//     $(this).text();
+//     console.log(this)
+// })
